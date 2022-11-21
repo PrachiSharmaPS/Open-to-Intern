@@ -27,5 +27,3 @@ const internSchema = mongoose.Schema({
 },{ timestamps: true })
 
 module.exports = mongoose.model('Intern', internSchema)
-const mongoose=require("mongoose");
-
