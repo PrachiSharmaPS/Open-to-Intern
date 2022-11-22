@@ -69,30 +69,31 @@ module.exports.createCollege = createCollege
 
 //=============================================Get College details==========================================================//
 
-const collegeDetails=async function(req,res){
-    try{
-        const collegeName=req.query.collegeName;
-    
-        if(!collegeName){
-            return res.status(400).send({status:false, msg:"please Provide college name"})}
-    
-        const collegeDetails=await collegeModel.findOne({name:collegeName})
-        if(!collegeDetails){
-            return res.status(400).send({status:false,mag:"please provide a valid college name"})}
-    
-        const interns=await internModel.find({collegeId:collegeDetails._id})
-        const college = {
-            name: collegeDetails.name,
-            fullName: collegeDetails.fullName,
-            logoLink: collegeDetails.logoLink,
-            interns: interns
-        }
-        return    res.status(200).send({status:true, data:college})  
-   }
-    catch (err) {
-        return res.status(500).send({ status: false, msg: err.message });
-      }
-    
+const collegeDetails = async function (req, res) {
+    try {
+    const collegeName = req.query.collegeName;
+//----------------college Name-----------------------
+      if (!collegeName) {
+         return res.status(400).send({ status: false, msg: "please Provide college name" });
     }
+//--------------finding the colllege Detail--------------------
+    const collegeDetails = await collegeModel.findOne({ name: collegeName });
+      if (!collegeDetails) {
+         return res.status(400).send({ status: false, mag: "please provide a valid college name" });
+    }
+//----------------find intern data------------------------
+    const interns = await internModel.find({ collegeId: collegeDetails._id });
+     
+    const college = {
+        name: collegeDetails.name,
+        fullName: collegeDetails.fullName,
+        logoLink: collegeDetails.logoLink,
+        interns: interns,
+    };
+        return res.status(200).send({ status: true, data: college });
+    } catch (err) {
+        return res.status(500).send({ status: false, msg: err.message });
+    }
+};
 
-    module.exports.collegeDetails = collegeDetails
+module.exports.collegeDetails = collegeDetails
