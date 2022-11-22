@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://kanirudh726:0cczXnVbYKHycDtp@project2-group14.tjfjpyg.mongodb.net/test" ,{
+mongoose.connect("mongodb+srv://kanirudh726:0cczXnVbYKHycDtp@project2-group14.tjfjpyg.mongodb.net/group-14Database" ,{
     UseNewUrlParser: true
 })
 
