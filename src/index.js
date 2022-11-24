@@ -8,7 +8,6 @@ app.use(express.json());
 mongoose.connect("mongodb+srv://kanirudh726:0cczXnVbYKHycDtp@project2-group14.tjfjpyg.mongodb.net/group-14Database" ,{
     UseNewUrlParser: true
 })
-
 .then( () => console.log("mongoDb is connected"))
 .catch((err) => console.log(err.message))
 
