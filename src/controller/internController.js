@@ -1,7 +1,7 @@
 const internModel = require("../model/internModel");
 const collegeModel = require("../model/collegeModel");
 
-//----------------------- Regex for Email and mobile Number  --------------------
+//---------------------- Regex for Email and mobile Number  --------------------
 let testEmail = new RegExp("^[a-z0-9]{3,}@[a-z]{3,}[.]{1}[a-z]{3,6}$");
  
 const createInterns = async function (req, res) {

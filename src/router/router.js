@@ -3,7 +3,7 @@ const router = express.Router();
 const collegeController = require('../controller/collegeController');
 const internController = require('../controller/internController');
 
-//api
+//Routes 
 router.post('/functionUp/colleges', collegeController.createCollege)
 router.post('/functionUp/Interns', internController.createInterns)
 router.get('/functionUp/Colleges', collegeController.collegeDetails)

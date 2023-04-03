@@ -1,7 +1,7 @@
 const collegeModel = require('../model/collegeModel');
 const internModel = require('../model/internModel')
 
-//========================================================validator and regex====================================================//
+//==========================validator and regex=================================//
 const isValid =  function(value){
     if(typeof value == "undifined" || value == "null") return false
     if(typeof value == "string" && value.trim().length == 0) return false
